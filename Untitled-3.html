@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Test Your Knowledge</title>
+        <style>
+            body {
+                font-family: Helvetica, sans-serif;
+                text-align: center;
+                margin: 50px;
+                background-color: rgb(226, 204, 4);
+            }
+            input, button {
+                font-size: 16px;
+                margin: 10px;
+            }
+            #result {
+                font-weight: bold;
+                margin-top: 10px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>Quantum computing Quiz</h2>
+        <p id="question"> what is superposition?</p>
+
+        <input type="text" id="answer" placeholder="Type your answer here">
+        <button onclick="checkAnswer()">Submit</button>
+
+        <p id="result"></p>
+
+        <script>
+            function checkAnswer() {
+                let userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+                let correctAnswer = "existing in multiple states simultaneously"; // existing in multiple states simultaneously
+                let resultElement = document.getElementById("result");
+
+                if (userAnswer === correctAnswer) {
+                    resultElement.textContent = "Correct! You Got it";
+                    resultElement.style.color= "green";
+                } else {
+                    resultElement.textContent = "Wrong! Try again";
+                    resultElement.style.color = "red";
+                } 
+            }
+        </script>
+    </body>
+</html>
